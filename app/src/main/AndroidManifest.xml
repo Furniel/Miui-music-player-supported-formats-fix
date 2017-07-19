@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.furniel.miuimusicplayerfix">
+
+<application
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name" >
+    <meta-data
+            android:name="xposedmodule"
+            android:value="true" />
+    <meta-data
+            android:name="xposeddescription"
+            android:value="Add support for wma, asf, m4a, aiff, aif, aifc, ape, ac3, eac3, ec3, dsd, dff, dsf, dts" />
+    <meta-data
+            android:name="xposedminversion"
+            android:value="53" />
+</application>
+</manifest>
