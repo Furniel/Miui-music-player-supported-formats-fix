@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Miui music player supported formats fix</string>
+    <string name="xposed_description">Add support for wma, asf, m4a, aiff, aif, aifc, ape, ac3, eac3, ec3, dsd, dff, dsf, dts</string>
 </resources>

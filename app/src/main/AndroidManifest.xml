@@ -10,7 +10,7 @@
             android:value="true" />
     <meta-data
             android:name="xposeddescription"
-            android:value="Add support for wma, asf, m4a, aiff, aif, aifc, ape, ac3, eac3, ec3, dsd, dff, dsf, dts" />
+            android:value="@string/xposed_description" />
     <meta-data
             android:name="xposedminversion"
             android:value="53" />

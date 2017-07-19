@@ -17,6 +17,7 @@ public class formats_fix implements IXposedHookLoadPackage {
     public void handleLoadPackage(final LoadPackageParam lpparam) throws Throwable {
         if (!lpparam.packageName.equals("com.miui.player"))
             return;
+
         XposedBridge.log("MIUI PLAYER FOUND!");
 
         findAndHookMethod("com.miui.player.scanner.FileScanStrategy", lpparam.classLoader, "isAudioExtension", String.class , new XC_MethodHook() {
@@ -36,7 +37,7 @@ public class formats_fix implements IXposedHookLoadPackage {
         });
     }
 
-    public static String getExtension(String str) {
+    private static String getExtension(String str) {
         if (str == null || str.length() == 0) {
             return "";
         }
