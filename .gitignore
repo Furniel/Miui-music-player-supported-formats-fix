@@ -11,3 +11,4 @@
 /app/build
 /app/*.apk
 /app/signing.gradle
+/*.jks

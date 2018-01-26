@@ -23,16 +23,15 @@ public class formats_fix implements IXposedHookLoadPackage {
         findAndHookMethod("com.miui.player.scanner.FileScanStrategy", lpparam.classLoader, "isAudioExtension", String.class , new XC_MethodHook() {
             @Override
             protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
-                // this will be called before the clock was updated by the original method
             }
             @Override
             protected void afterHookedMethod(XC_MethodHook.MethodHookParam param) throws Throwable {
-                // this will be called after the clock was updated by the original method
                 String theReturnVal= (String) param.args[0];
-                final String[] VALUE_SCAN_EXT_ARRAY = new String[]{"mp3", "mpga", "m4a", "wav", "awr", "awb", "qcp", "ogg", "oga", "aac", "mka", "mid", "midi", "xmf", "rtttl", "smf", "imy", "rtx", "ota", "mxmf", "ape", "flac", "ec3", "dsf", "dff", "amr", 'opus'};
+                final String[] VALUE_SCAN_EXT_ARRAY = new String[]{"mp3", "mpga", "m4a", "wav", "awr", "awb", "qcp", "ogg", "oga", "aac", "mka", "mid", "midi", "xmf", "rtttl", "smf", "imy", "rtx", "ota", "mxmf", "ape", "flac", "ec3", "dsf", "dff", "amr", "opus"};
+
                 mSupportedAudioExt.addAll(Arrays.asList(VALUE_SCAN_EXT_ARRAY));
                 param.setResult(mSupportedAudioExt.contains(getExtension(theReturnVal).toLowerCase()));
-                XposedBridge.log("MIUI PLAYER FORMATS SHOULD BE FIXED NOW!");
+                XposedBridge.log("RETURNED MIUI PLAYER FIXED FORMATS LIST!");
             }
         });
     }
